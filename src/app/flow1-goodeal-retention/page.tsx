@@ -759,32 +759,29 @@ export default function Flow1GoodDealRetention() {
               <div className="w-full bg-white rounded-t-3xl p-6 pb-8">
                 <p className="text-lg font-bold text-zinc-900 mb-1">약관에 동의해주세요</p>
                 <p className="text-[12px] text-zinc-400 mb-5">(문구는 법무 검토 후 최종 확정됩니다)</p>
-                <div className="flex flex-col gap-4 mb-6">
-                  <label className="flex items-center gap-3 text-[14px] text-zinc-800">
+                <div className="flex flex-col gap-1 mb-6">
+                  <label className="flex items-center gap-3 text-[14px] text-zinc-800 py-3 cursor-pointer active:bg-zinc-50 rounded-xl -mx-2 px-2">
                     <input
                       type="checkbox"
                       checked={consentRequired}
                       onChange={(e) => setConsentRequired(e.target.checked)}
-                      className="w-5 h-5 accent-[#FEE500]"
+                      className="w-6 h-6 shrink-0 accent-[#FEE500]"
                     />
                     [필수] 굿딜 테마스탬프 이용약관 동의
                   </label>
-                  <label className="flex items-center gap-3 text-[14px] text-zinc-800">
+                  <label className="flex items-center gap-3 text-[14px] text-zinc-800 py-3 cursor-pointer active:bg-zinc-50 rounded-xl -mx-2 px-2">
                     <input
                       type="checkbox"
                       checked={consentOptional}
                       onChange={(e) => setConsentOptional(e.target.checked)}
-                      className="w-5 h-5 accent-[#FEE500]"
+                      className="w-6 h-6 shrink-0 accent-[#FEE500]"
                     />
                     [선택] 알림 수신 동의
                   </label>
                 </div>
                 <button
-                  disabled={!consentRequired}
                   onClick={confirmConsent}
-                  className={`w-full rounded-xl py-4 font-bold transition-transform ${
-                    consentRequired ? "bg-[#FEE500] text-black active:scale-[0.98]" : "bg-zinc-100 text-zinc-400"
-                  }`}
+                  className="w-full rounded-xl py-4 font-bold bg-[#FEE500] text-black active:scale-[0.98] transition-transform"
                 >
                   동의하고 계속하기
                 </button>
